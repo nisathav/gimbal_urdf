@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="origin_link">
+
+  </link>
+
+  <joint name="chassis_joint" type="fixed">
+    <parent link="origin_link"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.048094 1.2212E-15 0.14052"
+        rpy="0 0 0" />
+      <mass
+        value="0.42446" />
+      <inertia
+        ixx="0.016076"
+        ixy="4.443E-20"
+        ixz="8.5155E-19"
+        iyy="0.016076"
+        iyz="-1.2846E-16"
+        izz="0.00032881" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.98824 0.9098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="-3.0612E-06 2.7756E-15 0.3503"
+        rpy="0 0 0" />
+      <mass
+        value="0.081988" />
+      <inertia
+        ixx="0.0026051"
+        ixy="-6.5609E-22"
+        ixz="-7.4744E-08"
+        iyy="0.0026052"
+        iyz="-2.1308E-17"
+        izz="1.7899E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="prismatic">
+    <origin
+      xyz="0.048094 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="-0.597"
+      effort="100"
+      velocity="0.3" />
+  </joint>
+
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-0.0024916 -0.027424 0.015242"
+        rpy="0 0 0" />
+      <mass
+        value="0.0060256" />
+      <inertia
+        ixx="4.4152E-06"
+        ixy="-3.7675E-08"
+        ixz="-6.0876E-08"
+        iyy="2.1734E-06"
+        iyz="1.9989E-06"
+        izz="2.5295E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.6641"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="34" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.013592 0.016442 0.012255"
+        rpy="0 0 0" />
+      <mass
+        value="0.0057952" />
+      <inertia
+        ixx="2.9779E-06"
+        ixy="-6.4705E-07"
+        ixz="-4.4302E-07"
+        iyy="1.2402E-06"
+        iyz="-1.1413E-06"
+        izz="2.6809E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0 -0.043505 0.044551"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 -0.86603 -0.5" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="34" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="0.0038314 0 0.00040407"
+        rpy="0 0 0" />
+      <mass
+        value="0.0040014" />
+      <inertia
+        ixx="3.3553E-07"
+        ixy="6.9875E-23"
+        ixz="7.8116E-09"
+        iyy="1.535E-07"
+        iyz="1.3236E-21"
+        izz="2.8173E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_urdf/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0.007 0.043301 0.025"
+      rpy="0 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="34" />
+  </joint>
+</robot>
